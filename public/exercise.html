@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" />
-  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="./style.css" />
   <title>Fitness Tracker</title>
 </head>
 
@@ -22,11 +22,11 @@
     <div class="ui container exercise">
       <div class="ui raised card m-auto">
         <h2>Add Your Exercise</h2>
-        <form action="POST">
+        
           <div class="workout-type">
             <label for="type">Exercise Type:</label>
             <select name="type" id="type">
-              <option disabled selected>Select Exercise Type</option>
+              <option selected>Select Exercise Type</option>
               <option value="resistance">Resistance</option>
               <option value="cardio">Cardio</option>
             </select>
@@ -68,14 +68,14 @@
             </div>
           </div>
           <div class="buttons">
-            <button disabled class="huge ui blue button complete">
+            <button  class="huge ui blue button complete">
               Complete
             </button>
-            <button class="huge ui positive button add-another">
+            <button  class="huge ui positive button add-another">
               Add Exercise
             </button>
           </div>
-        </form>
+        
       </div>
     </div>
   </div>
