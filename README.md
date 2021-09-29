@@ -27,7 +27,7 @@ With this application the user is able to view, create and track daily workouts.
 
 ## Deployed-Link
 
-
+https://fiteness-tracker.herokuapp.com/
 
 ## User Story
 As a user, I want to be able to view create and track daily workouts. 
