@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const Workout = require("../models/workout");
 const Exercise = require("../models/Exercise");
-
+/*
 router.get("/api/workouts", (req, res) => {
     Workout.find({}).then(dbWorkout => {
         dbWorkout.foreach(workout => {
@@ -17,6 +17,24 @@ router.get("/api/workouts", (req, res) => {
         res.json(err);
     });
 });
+*/
+router.get('/api/workouts', (req, res) => {
+    Workout.aggregate([
+      {
+        $addFields: {
+          totalDuration: {
+            $sum: '$exercises.duration',
+          },
+        },
+      },
+    ])
+      .then((dbWorkouts) => {
+        res.json(dbWorkouts);
+      })
+      .catch((err) => {
+        res.json(err);
+      });
+  });
 
 router.put("/api/workouts/:id", (req, res) => {
     Workout.findOneAndUpdate(
